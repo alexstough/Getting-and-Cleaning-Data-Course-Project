@@ -1,7 +1,7 @@
 # 1. Merge the training and the test sets to create one data set.
 
       # Set working directory. This will need to be updated to correspond to each user's local directory in use.
-      filepath <- "C:/Users/alex.stough/Documents/4 Training/R Programming/Coursera/Projects/Getting and Cleaning Data Course Project"
+      filepath <- "C:/Users/alex.stough/Documents/4 Training/R Programming/Coursera/Projects/Getting-and-Cleaning-Data-Course-Project"
       setwd(filepath)
 
       # For naming variables in the test and train datasets, read in features.txt file.
@@ -113,6 +113,10 @@
     # Reorder activity_name to the right of the activity number variable.
     tidy_data_averages <- tidy_data_averages[,c(1:2, 69, 3:68)]
     
-    # Clean global environment for everything except the original tidy_data and the new tidy_data_averages dataframes.
+    # Clean global environment for everything except the original tidy_data data.frame, the new tidy_data_averages data.frame, and the filepath value.
     rm(activity_labels, filepath)
+    
+    # Create a .txt file containing the 'tidy_data' and 'tidy_data_averages' datasets.
+    write.table(tidy_data, file = "tidy_data.txt")
+    write.table(tidy_data_averages, file = "tidy_data_averages.txt")
     
