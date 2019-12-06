@@ -117,6 +117,6 @@
     rm(activity_labels, filepath)
     
     # Create a .txt file containing the 'tidy_data' and 'tidy_data_averages' datasets.
-    write.table(tidy_data, file = "tidy_data.txt")
-    write.table(tidy_data_averages, file = "tidy_data_averages.txt")
+    write.table(tidy_data, file = "tidy_data.txt", row.names = FALSE)
+    write.table(tidy_data_averages, file = "tidy_data_averages.txt", row.names = FALSE)
     
